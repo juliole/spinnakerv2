@@ -4,7 +4,7 @@ metadata:
   name: js-spinnaker-nginx
   namespace: default
   labels:
-    foo: baz
+    foo: julio
 spec:
   containers:
   - name: nginx
