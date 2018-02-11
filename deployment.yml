@@ -15,8 +15,8 @@ spec:
         image: nginx
         resources:
           requests:
-            memory: "128M"
-            cpu: "900m"
+            memory: "1M"
+            cpu: "1m"
         ports:
         - containerPort: 80
         livenessProbe:
