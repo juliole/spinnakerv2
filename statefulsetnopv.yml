@@ -15,12 +15,12 @@ spec:
       - name: nginx
         image: gcr.io/google_containers/nginx-slim:0.8
         ports:
-        - containerPort: 81
+        - containerPort: 80
           name: web
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
       volumes:
-      - name: jenkins-home
+      - name: www
         hostPath:
           path: /tmp/default/testnginx
