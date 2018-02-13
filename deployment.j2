@@ -1,0 +1,42 @@
+{% set VAR1 = "true" %}
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-v2-j2
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: k8s-v2-j2
+    spec:
+      containers:
+      - name: k8s-v2-j2
+        image: nginx
+        env:
+{% if VAR1 == 'true' %}
+           - name: testin
+             value: testinvalue
+{% endif %}
+           - name: testout
+             value: testoutvalue
+        resources:
+          requests:
+            memory: "1M"
+            cpu: "1m"
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 2
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 2
