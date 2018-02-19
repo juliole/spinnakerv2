@@ -15,7 +15,7 @@ spec:
         image: nginx
         resources:
           requests:
-            memory: "3M"
+            memory: "1M"
             cpu: "1m"
         ports:
         - containerPort: 80
