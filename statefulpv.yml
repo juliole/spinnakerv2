@@ -7,7 +7,7 @@ metadata:
     app: nginx
 spec:
   capacity:
-    storage: 1.0Gi
+    storage: 2.0Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
