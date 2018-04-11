@@ -4,4 +4,4 @@ metadata:
   name: k8-v2-config-map
   namespace: default
 data:
- test: juliole1
+ test: juliole
