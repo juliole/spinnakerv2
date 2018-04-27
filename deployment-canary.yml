@@ -30,4 +30,4 @@ spec:
             path: /
             port: 80
           initialDelaySeconds: 2
-          timeoutSeconds: 4
+          timeoutSeconds: 3
