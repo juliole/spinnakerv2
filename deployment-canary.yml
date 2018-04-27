@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-v2-example
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: k8s-v2-example
+    spec:
+      containers:
+      - name: k8s-v2-example
+        image: nginx
+        resources:
+          requests:
+            memory: "1M"
+            cpu: "1m"
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 2
+          timeoutSeconds: 4
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 2
+          timeoutSeconds: 3
